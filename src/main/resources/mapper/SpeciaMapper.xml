@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcy.mapper.SpeciaMapper">
+    <select id="showSpeciaInfo" resultType="com.xcy.pojo.Department" parameterType="Integer">
+    select  * from department where id = #{id}
+    </select>
+
+    <insert id="saveAdvisory" parameterType="com.xcy.pojo.Patient">
+    insert into patient values(null,#{name},#{sex},#{phoneNum},#{address},#{email},#{message});
+    </insert>
+
+    <select id="showTemplate" resultType="com.xcy.pojo.TimeTable">
+        select * from timetable
+    </select>
+
+    <select id="showExperts" parameterType="integer" resultType="com.xcy.pojo.Experts">
+         select  * from experts where id = #{id}
+    </select>
+<!--    ExpertsAndDepartment showExpertsList(Integer departmentId)-->
+
+    <select id="showExpertsList" parameterType="integer" resultType="com.xcy.pojo.ExpertsAndDepartment">
+        select  * from experts expertsList departmentId = #{departmentId}
+    </select>
+</mapper>
