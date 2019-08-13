@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xcy.mapper.ReaderMapper">
+
+
+    <select id="getTitle" resultType="com.xcy.pojo.World" >
+        select id,title, time from world
+    </select>
+    <select id="getText" resultType="String" parameterType="int">
+        select text from world where id =#{id}
+    </select>
+    <select id="getWorldById" resultType="com.xcy.pojo.World" parameterType="int">
+        select title , time  from world where id =#{id}
+    </select>
+
+
+</mapper>
