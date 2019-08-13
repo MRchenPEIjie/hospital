@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/hospital
     username: root
-    password: root
+    password: zhangning1994
   mvc:
     view:
       prefix: /
