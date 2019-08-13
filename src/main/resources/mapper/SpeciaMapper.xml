@@ -5,8 +5,22 @@
 <mapper namespace="com.xcy.mapper.SpeciaMapper">
     <select id="showSpeciaInfo" resultType="com.xcy.pojo.Department" parameterType="Integer">
     select  * from department where id = #{id}
-</select>
+    </select>
+
     <insert id="saveAdvisory" parameterType="com.xcy.pojo.Patient">
-    insert into student values(null,#{name},#{sex},#{phoneNum},#{address},#{email},#{message});
-</insert>
+    insert into patient values(null,#{name},#{sex},#{phoneNum},#{address},#{email},#{message});
+    </insert>
+
+    <select id="showTemplate" resultType="com.xcy.pojo.TimeTable">
+        select * from timetable
+    </select>
+
+    <select id="showExperts" parameterType="integer" resultType="com.xcy.pojo.Experts">
+         select  * from experts where id = #{id}
+    </select>
+<!--    ExpertsAndDepartment showExpertsList(Integer departmentId)-->
+
+    <select id="showExpertsList" parameterType="integer" resultType="com.xcy.pojo.ExpertsAndDepartment">
+        select  * from experts expertsList departmentId = #{departmentId}
+    </select>
 </mapper>

@@ -11,6 +11,33 @@
     <script src="Script/pngAlaph.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
+    <script type="application/javascript">
+       function tijiao() {
+
+
+
+            var name = $("#name").val();
+            var sex = $("#sex").val();
+            var age = $("#age").val();
+            var address = $("#address").val();
+            var email = $("#email").val();
+            var phone = $("#phone").val();
+            var msg = $("#msg").val();
+
+            alert(name);
+
+            $.ajax({
+                type: "post",
+                url: "saveAdvisory",
+                data:{name:name,sex:sex,age:age,address:address,email:email,phoneNum:phone,message:msg},
+                success: function (date) {
+                   alert("提交成功");
+                }
+            });
+
+       }
+    </script>
+
 
 </head>
 <body>
@@ -90,35 +117,36 @@
                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="Advisory_table">
                               <tr>
                                 <td class="name">姓　　名<span>*</span></td>
-                                <td><input name="" type="text" class="text"/></td>
+                                <td><input id="name" name="name" type="text" class="text" /></td>
                               </tr>
                               <tr>
                                 <td class="name">性　　别<span>*</span></td>
-                                <td><input name="input" type="text" class="text"/></td>
+                                <td><input id = "sex" name="sex" type="text" class="text" /></td>
                               </tr>
                               <tr>
                                 <td class="name">年　　龄<span>*</span></td>
-                                <td><input name="input2" type="text" class="text"/></td>
+                                <td><input id="age" name="age" type="text" class="text"/></td>
                               </tr>
                               <tr>
                                 <td class="name">电　　话<span>*</span></td>
-                                <td><input name="input3" type="text" class="text"/></td>
+                                <td><input id="phone" name="phone" type="text" class="text"/></td>
                               </tr>
                               <tr>
                                 <td class="name">地　　址<span>*</span></td>
-                                <td><input name="input4" type="text" class="text"/></td>
+                                <td><input name="address" name="address" type="text" class="text"/></td>
                               </tr>
                               <tr>
                                 <td class="name">邮　　箱</td>
-                                <td><input name="input5" type="text" class="text"/></td>
+                                <td><input id="email" name="email" type="text" class="text"/></td>
                               </tr>
                               <tr>
                                 <td valign="top" class="name">质询内容<span>*</span></td>
-                                <td><textarea name="input6" class="text03"></textarea></td>
+                                <td><textarea id = "msg" name="msg" class="text03"></textarea></td>
                               </tr>
                               <tr>
                                 <td valign="top" class="name">&nbsp;</td>
-                                <td><input name="" type="button" value="确定留言" class="btn01"/> <input name="input7" type="button" value="重置留言" class="btn02"/></td>
+                                <td><input onclick="tijiao()" name="tijiao" type="button" value="确定留言" class="btn01" />
+                                    <input name="input7" type="button" value="重置留言" class="btn02"/></td>
                               </tr>
                            </table>
                            <!--End-->
